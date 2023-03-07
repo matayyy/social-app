@@ -1,0 +1,40 @@
+SCRIPTS
+----------------------------------------------
+*** CLEARING DOCKER ***
+
+# STOP ALL RUNNING CONTAINERS
+docker stop $(docker ps -aq)
+
+# REMOVE ALL STOPPED CONTAINERS
+docker rm $(docker ps -aq)
+
+# REMOVE ALL IMAGES
+docker rmi $(docker images -q)
+
+# REMOVE ALL STRAY VOLUMES IF ANY
+docker volume rm $(docker volume ls -q)
+
+----------------------------------------------
+*** BASH INTO CONTAINER ***
+
+#EXEC INTO DOCKER CONTAINER
+docker exec -it [postgres] bash
+* container name
+
+#INTERACTIVE SHEL FOR POSTGRES
+psql -U [matay]
+* postgres user
+
+#CHECKING DATABASES
+\l
+
+#EXIT PSQL
+\q
+
+#CREATE DATABASE
+CREATE DATABASE customer;
+
+#EXIT CONTAINER
+ctrl + d
+
+----------------------------------------------
