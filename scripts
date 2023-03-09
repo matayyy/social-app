@@ -28,13 +28,31 @@ psql -U [matay]
 #CHECKING DATABASES
 \l
 
+#CHANGE DATABASE
+\c [customer]
+*database name
+
+#EXPANDED MODE (DETAILS)
+\x
+
 #EXIT PSQL
 \q
 
-#CREATE DATABASE
-CREATE DATABASE customer;
+#CLEAR SCREEN
+CTRL + L
+
+#DELETE
+delete from flyway_schema_history;
+
+#DROP TABLE
+drop table flyway_schema_history;
 
 #EXIT CONTAINER
 ctrl + d
+
+#SEQUENCE CHECK OR MOD
+SELECT setval('customer_id_seq', 1, false);
+SELECT currval('customer_id_seq')
+
 
 ----------------------------------------------
