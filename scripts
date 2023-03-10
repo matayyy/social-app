@@ -1,0 +1,58 @@
+SCRIPTS
+----------------------------------------------
+*** CLEARING DOCKER ***
+
+# STOP ALL RUNNING CONTAINERS
+docker stop $(docker ps -aq)
+
+# REMOVE ALL STOPPED CONTAINERS
+docker rm $(docker ps -aq)
+
+# REMOVE ALL IMAGES
+docker rmi $(docker images -q)
+
+# REMOVE ALL STRAY VOLUMES IF ANY
+docker volume rm $(docker volume ls -q)
+
+----------------------------------------------
+*** BASH INTO CONTAINER ***
+
+#EXEC INTO DOCKER CONTAINER
+docker exec -it [postgres] bash
+* container name
+
+#INTERACTIVE SHEL FOR POSTGRES
+psql -U [matay]
+* postgres user
+
+#CHECKING DATABASES
+\l
+
+#CHANGE DATABASE
+\c [customer]
+*database name
+
+#EXPANDED MODE (DETAILS)
+\x
+
+#EXIT PSQL
+\q
+
+#CLEAR SCREEN
+CTRL + L
+
+#DELETE
+delete from flyway_schema_history;
+
+#DROP TABLE
+drop table flyway_schema_history;
+
+#EXIT CONTAINER
+ctrl + d
+
+#SEQUENCE CHECK OR MOD
+SELECT setval('customer_id_seq', 1, false);
+SELECT currval('customer_id_seq')
+
+
+----------------------------------------------
