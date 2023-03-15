@@ -31,6 +31,21 @@ services:
     depends_on:
       - db
 
+  social-app:
+    container_name: social-app
+    image: matayyy/social-app
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/customer
+    ports:
+      - "8088:8080"
+    networks:
+      - postgres
+    depends_on:
+      - db
+    restart: unless-stopped
+#    command:
+#      - --spring.datasource.url=jdbc:postgresql://db:5432/customer
+
 networks:
   postgres:
     driver: bridge
