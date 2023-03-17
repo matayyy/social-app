@@ -56,3 +56,30 @@ SELECT currval('customer_id_seq')
 
 
 ----------------------------------------------
+
+
+Command	Description
+docker ps	            List running containers
+docker ps -a	        List all containers (including stopped ones)
+docker images	        List images
+docker run <image>	    Run a container from an image
+docker stop <container>	Stop a running container
+docker rm <container>	Remove a stopped container
+docker rmi <image>	    Remove an image
+docker build <path/to/dockerfile>	    Build an image from a Dockerfile
+docker tag <image> <new_name:tag>	    Tag an image with a new name and optional tag
+docker login	        Log in to a Docker registry
+docker push <image>	    Push an image to a Docker registry
+docker pull <image>	    Pull an image from a Docker registry
+docker exec -it <container> <command>	Execute a command in a running container
+docker-compose up	    Start all services defined in a docker-compose.yml file
+docker-compose down	    Stop all services defined in a docker-compose.yml file
+
+----------------------------------------------
+#RUNNING DOCKER IMAGE CHANGING DATABASE CONNECTION
+docker run --name matay-social --rm -p 8080:8080 --network social-app_postgres matayyy/social-app --spring.datasource.url=jdbc:postgresql://db:5432/customer
+*matayyy/social-app = my image
+*social-app_postgres = name of application + network name
+*--spring.datasource.url = changing variable inside application.properties
+*db = name of container set in docker-compose
+
