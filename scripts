@@ -82,4 +82,11 @@ docker run --name matay-social --rm -p 8080:8080 --network social-app_postgres m
 *social-app_postgres = name of application + network name
 *--spring.datasource.url = changing variable inside application.properties
 *db = name of container set in docker-compose
+----------------------------------------------
+
+FRONTEND
+  cd React
+  npm install
+  npm run dev
+
 
