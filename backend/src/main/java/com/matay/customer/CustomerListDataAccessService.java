@@ -12,9 +12,9 @@ public class CustomerListDataAccessService implements CustomerDao {
     //db
     private static final List<Customer> customers = new ArrayList<>();
     static {
-        customers.add(new Customer(1, "Gabi", "gabi@mail.com", 24));
-        customers.add(new Customer(2, "Caroline", "caroline@mail.com", 24));
-        customers.add(new Customer(3, "Martha", "martha@mail.com", 24));
+        customers.add(new Customer(1, "Gabi", "gabi@mail.com", 24, Gender.MALE));
+        customers.add(new Customer(2, "Caroline", "caroline@mail.com", 24, Gender.MALE));
+        customers.add(new Customer(3, "Martha", "martha@mail.com", 24, Gender.MALE));
     }
     @Override
     public List<Customer> selectAllCustomers() {
