@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "social-app",
-      "image": "matayyy/social-app:04.04.2023.15.09.23",
+      "image": "matayyy/social-app:10.04.2023.12.17.45",
       "essential": true,
       "memory": 512,
       "portMappings": [
