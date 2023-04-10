@@ -22,6 +22,7 @@ public class Main {
     @Bean
     CommandLineRunner runner (CustomerRepository customerRepository) {
         //comment
+        //comment
         return args -> {
             var faker = new Faker();
             Random random = new Random();
