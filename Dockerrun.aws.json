@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "social-app-react",
-      "image": "matayyy/social-app-react:latest",
+      "image": "matayyy/social-app-react:13.04.2023.20.39.38",
       "essential": true,
       "memory": 256,
       "portMappings": [
