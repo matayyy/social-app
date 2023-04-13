@@ -95,4 +95,3 @@ jobs:
           curl -X POST -H 'Content-type: application/json' 
           --data '{"text":"Job Status ${{ job.status }}"}' 
           ${{ secrets.SLACK_WEBHOOK_URL }}
-  0 comments on commit e7bed00
