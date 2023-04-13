@@ -14,7 +14,7 @@ import CreateCustomerForm from "./CreateCustomerForm.jsx";
 const AddIcon = () => "+"
 const CloseIcon = () => "x"
 
-const DrawerForm = () => {
+const CreateCustomerDrawer = ({fetchCustomers}) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return <>
         <Button
@@ -31,7 +31,9 @@ const DrawerForm = () => {
                 <DrawerHeader>Create new customer</DrawerHeader>
 
                 <DrawerBody>
-                    <CreateCustomerForm />
+                    <CreateCustomerForm
+                        fetchCustomers={fetchCustomers}
+                    />
                 </DrawerBody>
 
                 <DrawerFooter>
@@ -47,4 +49,4 @@ const DrawerForm = () => {
     </>
 }
 
-export default DrawerForm;
+export default CreateCustomerDrawer;

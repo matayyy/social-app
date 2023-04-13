@@ -46,6 +46,19 @@ services:
 #    command:
 #      - --spring.datasource.url=jdbc:postgresql://db:5432/customer
 
+  social-app-react:
+    container_name: social-app-react
+    image: matayyy/social-app-react
+    build:
+      context: frontend/react
+      args:
+        api_base_url: http://localhost:8088
+    ports:
+      - "3000:5173"
+    depends_on:
+      - social-app
+    restart: unless-stopped
+
 networks:
   postgres:
     driver: bridge

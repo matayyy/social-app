@@ -1,4 +1,4 @@
-SCRIPTS
+COMMANDS
 ----------------------------------------------
 *** CLEARING DOCKER ***
 
@@ -88,5 +88,20 @@ FRONTEND
   cd React
   npm install
   npm run dev
+
+  docker build . -t matayyy/social-app-react
+  docker push matayyy/social-app-react
+
+  docker run --rm --name social-app-react -p 3000:5173 matayyy/social-app-react
+
+  docker exec -it social-app-react sh
+
+  Build for AWS
+  docker build . -t matayyy/social-app-react --build-arg api_base_url=http://social.eu-central-1.elasticbeanstalk.com:8080
+  docker push matayyy/social-app-react
+----------------------------------------------
+
+DELETE FROM customer;
+ALTER SEQUENCE customer_id_seq RESTART WITH 1;
 
 
