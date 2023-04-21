@@ -159,7 +159,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <configuration>
-                    <classesDirectory>../target/classes</classesDirectory>
+                    <classesDirectory>${project.build.outputDirectory}</classesDirectory>
                     <includes>
                         <include>**/*IntegrationTest.java</include>
                         <include>**/*IT.java</include>
