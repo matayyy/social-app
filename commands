@@ -105,3 +105,8 @@ DELETE FROM customer;
 ALTER SEQUENCE customer_id_seq RESTART WITH 1;
 
 
+
+--REACT--
+npm install react-router-dom
+
+
