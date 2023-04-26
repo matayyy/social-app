@@ -14,10 +14,11 @@ import {
 } from '@chakra-ui/react';
 import {Formik, Form, useField} from "formik";
 import * as Yup from 'yup';
-import logo from '../../assets/logo-transparent.png'
+import logo from '../../assets/logo-transparent.png';
 import {useAuth} from "../context/AuthContext.jsx";
 import {errorNotification} from "../../services/notification.js";
-import {useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom";
+import {useEffect} from "react";
 
 
 const MyTextInput = ({label, ...props}) => {
@@ -103,6 +104,15 @@ const LoginForm = () => {
 }
 
 const Login = () => {
+
+    const {customer} = useAuth();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(customer) {
+            navigate("/dashboard");
+        }
+    })
 
     return (
         <Stack minH={'100vh'} direction={{base: 'column', md: 'row'}}>
